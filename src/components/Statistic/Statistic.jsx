@@ -1,26 +1,16 @@
 import PropTypes from 'prop-types';
+import ResultFeedback from '../ResultFeedback';
 import s from './Statistic.module.css';
 
 function Statistic(props) {
-  const { good, neutral, bad, total, positivePercentage } = props;
+  const { feedback, good, neutral, bad, total, positivePercentage } = props;
+
   return (
-    <ul className={s.list}>
-      <li className={s.item}>
-        <p className={s.name}>Good: {good}</p>
-      </li>
-      <li className={s.item}>
-        <p className={s.name}>Neutral: {neutral}</p>
-      </li>
-      <li className={s.item}>
-        <p className={s.name}>Bad: {bad}</p>
-      </li>
-      <li className={s.item}>
-        <p className={s.name}>Total: {total}</p>
-      </li>
-      <li className={s.item}>
-        <p className={s.name}>Positive feedback: {positivePercentage}%</p>
-      </li>
-    </ul>
+    <div>
+      <ResultFeedback feedback={feedback} />
+      <p className={s.name}>Total: {total}</p>
+      <p className={s.name}>Positive feedback: {positivePercentage}%</p>
+    </div>
   );
 }
 

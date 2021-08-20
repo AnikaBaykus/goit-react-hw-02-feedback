@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import s from './Feedback.module.css';
+import firstLatter from '../helpers/FirstLetter';
 
 function Feedback({ options, onFeedback }) {
   return (
@@ -11,7 +12,7 @@ function Feedback({ options, onFeedback }) {
           onClick={() => onFeedback(type)}
           className={s.button}
         >
-          {type}
+          {firstLatter(type)}
         </button>
       ))}
     </div>
